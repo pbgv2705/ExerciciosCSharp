@@ -8,6 +8,7 @@ namespace ExerciciosCSharp
         static void Main(string[] args)
         {
             Console.WriteLine("Bem-vindo ao Sistema de Exerciços C#");
+            Console.WriteLine("========================================================");
             Console.WriteLine("1- Aluguel de quartos");
             Console.WriteLine("2 - Calculadora com Vector");
             Console.WriteLine("3 - Calculadora usando Params");
@@ -20,6 +21,7 @@ namespace ExerciciosCSharp
             Console.WriteLine("10 - Operações com TimeSpan");
             Console.WriteLine("11 - DateTimeKind");
             Console.WriteLine("12 - Padrão ISO 8601");
+            Console.WriteLine("=========================================================");
 
             int menu = int.Parse(Console.ReadLine());
 
@@ -321,9 +323,26 @@ namespace ExerciciosCSharp
                         DateTime d1 = DateTime.Parse("2000-08-15 13:05:58");
                         DateTime d2 = DateTime.Parse("2000-08-15T13:05:58Z");
 
-                        Console.WriteLine(d1);
+                        Console.WriteLine("==================================================");
+                        Console.WriteLine("d1: " + d1);
+                        Console.WriteLine("d1 Kind: " + d1.Kind);
+                        Console.WriteLine("d1 to Local: " + d1.ToLocalTime());
+                        Console.WriteLine("d1 to UTC: " + d1.ToUniversalTime());
 
+                        Console.WriteLine("==================================================");
                         Console.WriteLine(d2);
+                        Console.WriteLine("d2 Kind: " + d2.Kind);
+                        Console.WriteLine("d2 to Local: " + d2.ToLocalTime());
+                        Console.WriteLine("d2 to UTC: " + d2.ToUniversalTime());
+
+                        Console.WriteLine(d2.ToString("yyyy-MM-ddTHH:mm:ssZ")); // cuidado!
+                        // Para pasar a formato ISO 8601 debemos garantizar que la fecha y hora estén 
+                        // en formato Universal UTC:
+
+                        Console.WriteLine(d2.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ"));
+
+                        Console.WriteLine("==================================================");
+
 
                         break;
                     }
